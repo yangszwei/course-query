@@ -1,16 +1,3 @@
-<script context="module">
-	import Course from '$lib/models/course.js';
-
-	export async function load({ fetch }) {
-		const res = await fetch('/courses');
-		if (res.ok) {
-			const data = await res.json();
-			const courses = data.map((props) => new Course(props));
-			return { props: { courses } };
-		}
-	}
-</script>
-
 <script>
 	import '../app.css';
 	import AppBar from '$lib/components/layout/AppBar.svelte';
@@ -97,8 +84,9 @@
 
 	let checkboxes = [];
 
-	export let courses = [];
+	export let data;
 
+	$: courses = data.courses;
 	$: selected = courses.filter((v, i) => checkboxes[i]);
 </script>
 

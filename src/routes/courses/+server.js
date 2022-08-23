@@ -14,5 +14,5 @@ export async function get() {
 		console.error(e);
 	}
 
-	return { status, body };
+	return new Response(body, { status });
 }
