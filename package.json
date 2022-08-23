@@ -6,11 +6,10 @@
 		"schema": "data/schema.prisma"
 	},
 	"scripts": {
-		"dev": "svelte-kit dev",
-		"dev:host": "svelte-kit dev --host",
+		"dev": "vite dev",
 		"migrate": "prisma generate && prisma migrate deploy",
-		"build": "svelte-kit build",
-		"preview": "svelte-kit preview",
+		"build": "vite build",
+		"preview": "vite preview",
 		"lint": "prettier --check --ignore-path .gitignore --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
 		"format": "prisma format && prettier --write --ignore-path .gitignore --plugin-search-dir=. . && eslint --fix --ignore-path .gitignore ."
 	},
